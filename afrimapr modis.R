@@ -53,3 +53,7 @@ writeRaster(africalowres, "africa_lc_lowres.grd") # writes as grd to preserve ra
 
 levelplot(raster("africa_lc_lowres.gri"),
   col.regions = unlist(levels(raster("africa_lc_lowres.gri")))[c(33:48)])
+tiff("lc_africa.png", units = "mm", width = 210, height = 297, res = 100)
+print(levelplot(raster("africa_lc_lowres.gri"),
+  col.regions = unlist(levels(raster("africa_lc_lowres.gri")))[c(33:48)]))
+dev.off()
